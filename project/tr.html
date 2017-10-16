@@ -1,0 +1,111 @@
+ <!DOCTYPE html>
+    <html><head>
+
+    <button type=button id=f1 onclick="func(1)">Order Form</button>
+    <button type=button id=f2 onclick="func(2)">Retrieval Form</button>
+
+    <script type="text/javascript">
+    function func(a) {
+        if(a==1) {
+            document.getElementById("order").style.display="none";
+        }
+        if(a==2) {
+            document.getElementById("order").style.display="block";
+        }
+    }
+    </script>
+
+    <script type="text/javascript">
+        function showValue(newValue)
+        {
+            document.getElementById("range").innerHTML=newValue;
+        }
+    </script>
+    </head>
+
+   <body> 
+<form id=order action=form.php >
+
+    <p><center>Name: <input type=text
+        name="name"
+        placeholder="Enter Your Name"
+        required
+        autocomplete="on"></center><br>
+
+    <center>Email: <input type=text
+        name="email"
+        placeholder="Enter Your Email"
+        required
+        autocomplete="off"></center><br>
+
+    <center>Password: <input type=text
+        name="password"
+        placeholder="15 Characters Or Less"
+        required
+        autocomplete="off"></center><br>
+
+    <center>Address: <input type=text
+        name="address"
+        placeholder="Enter Your Address"
+        required
+        autocomplete="off"></center><br>
+
+    <center>Laptops: <input type=range 
+        name=laptop 
+        value=0 
+        min=0 
+        max=10 
+        onChange="showValue(this.value)">
+
+    <center>Monitors: <input type=range 
+        name=monitor 
+        value=0 
+        min=0 
+        max=10 
+        onChange="showValue(this.value)">
+
+    <center>Mouses: <input type=range 
+            name=mouse  
+        value=0 
+        min=0 
+        max=10 
+        onChange="showValue(this.value)">
+
+    <center>Keyboards: <input type=range
+        name=keyboard
+        value=0
+        min=0
+        max=10
+        onChange="showValue(this.value)">
+
+    <br>
+    <br>
+
+    <center>Shipping Carrier: <SELECT name="delivery">
+        <option value="fedex">FEDEX</option>
+        <option value="ups">UPS</option>
+    </SELECT></center>
+
+    <br>
+
+    <center>Would you like an email receipt?<br>
+    <center>Yes <input type="radio" name="group1" value=1> No
+    <input type="radio" name="group1" value=0 checked></center><br>
+
+    <br>
+
+    <center><input type=submit value="Submit Order"></center></p>
+
+    </form>
+
+    <form id=retrieve action=form2.php>
+
+    First Name: <input type=text name=first><br>
+    Last Name: <input type=text name=last><br>
+    Password: <input type=password name=p1><br>
+    Retype Password: <input type=password name=p2><br>
+    <input type=submit>
+
+    </form>
+</body>
+</html>
